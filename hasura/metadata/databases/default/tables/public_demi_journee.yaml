@@ -1,3 +1,4 @@
 table:
   name: demi_journee
   schema: public
+is_enum: true
