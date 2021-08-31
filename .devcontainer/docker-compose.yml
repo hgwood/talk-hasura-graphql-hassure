@@ -1,0 +1,10 @@
+version: "3.6"
+
+services:
+  devcontainer:
+    image: mcr.microsoft.com/vscode/devcontainers/javascript-node:14
+    volumes:
+      - ..:/workspaces/hassure-cra:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      HASURA_GRAPHQL_ENDPOINT: http://hasura:8080

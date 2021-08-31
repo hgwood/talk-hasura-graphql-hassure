@@ -1,0 +1,9 @@
+{
+  "dockerComposeFile": ["./docker-compose.yml", "../docker-compose.yml"],
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/hassure-cra",
+  "remoteUser": "node",
+  "postCreateCommand": "npm install --global --unsafe-perm hasura-cli@2.0.2",
+  "extensions": ["esbenp.prettier-vscode", "editorconfig.editorconfig"],
+  "forwardPorts": [8080]
+}
