@@ -5,10 +5,25 @@ object_relationships:
 - name: consultant
   using:
     foreign_key_constraint_on: matricule_consultant
+array_relationships:
+- name: demi_journees_de_cra
+  using:
+    manual_configuration:
+      column_mapping:
+        annee: annee
+        matricule_consultant: matricule_consultant
+        mois: mois
+      insertion_order: null
+      remote_table:
+        name: demi_journee_de_cra
+        schema: public
 insert_permissions:
 - permission:
     backend_only: false
-    check: {}
+    check:
+      demi_journees_de_cra:
+        cra_complet:
+          _eq: "true"
     columns:
     - annee
     - mois

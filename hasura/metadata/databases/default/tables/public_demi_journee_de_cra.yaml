@@ -16,6 +16,12 @@ object_relationships:
       remote_table:
         name: validation_de_cra
         schema: public
+computed_fields:
+- definition:
+    function:
+      name: demi_journee_de_cra_cra_complet
+      schema: public
+  name: cra_complet
 insert_permissions:
 - permission:
     backend_only: false
