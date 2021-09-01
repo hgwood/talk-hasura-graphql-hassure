@@ -1,3 +1,25 @@
 table:
   name: validation_de_cra
   schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - annee
+    - mois
+    set:
+      matricule_consultant: x-hasura-user-id
+  role: consultant
+select_permissions:
+- permission:
+    columns:
+    - matricule_consultant
+    - annee
+    - mois
+    - date
+    - approuve_par_manager
+    filter:
+      matricule_consultant:
+        _eq: X-Hasura-User-Id
+  role: consultant
