@@ -1,6 +1,10 @@
 table:
   name: validation_de_cra
   schema: public
+object_relationships:
+- name: consultant
+  using:
+    foreign_key_constraint_on: matricule_consultant
 insert_permissions:
 - permission:
     backend_only: false
@@ -23,3 +27,13 @@ select_permissions:
       matricule_consultant:
         _eq: X-Hasura-User-Id
   role: consultant
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - approuve_par_manager
+    filter:
+      consultant:
+        matricule_manager:
+          _eq: X-Hasura-User-Id
+  role: manager
