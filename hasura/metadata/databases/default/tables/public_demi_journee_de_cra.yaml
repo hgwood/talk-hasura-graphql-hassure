@@ -5,10 +5,27 @@ object_relationships:
 - name: consultant
   using:
     foreign_key_constraint_on: matricule_consultant
+- name: validation
+  using:
+    manual_configuration:
+      column_mapping:
+        annee: annee
+        matricule_consultant: matricule_consultant
+        mois: mois
+      insertion_order: null
+      remote_table:
+        name: validation_de_cra
+        schema: public
 insert_permissions:
 - permission:
     backend_only: false
-    check: {}
+    check:
+      _not:
+        _exists:
+          _table:
+            name: validation_de_cra
+            schema: public
+          _where: {}
     columns:
     - code_projet
     - date
@@ -44,7 +61,13 @@ select_permissions:
   role: manager
 update_permissions:
 - permission:
-    check: null
+    check:
+      _not:
+        _exists:
+          _table:
+            name: validation_de_cra
+            schema: public
+          _where: {}
     columns:
     - code_projet
     filter: {}
