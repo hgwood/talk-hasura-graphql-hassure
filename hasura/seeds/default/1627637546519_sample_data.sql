@@ -2,18 +2,24 @@ insert into
   projet (code, nom)
   values
     ('P1', 'Projet 1'),
-    ('P2', 'Projet 2');
+    ('P2', 'Projet 2')
+  on conflict (code)
+    do update set nom = excluded.nom;
 
 insert into
   manager (matricule, nom)
   values
-    ('RMA', 'Roger Mastoc');
+    ('RMA', 'Roger Mastoc')
+  on conflict (matricule)
+    do update set nom = excluded.nom;
 
 insert into
   consultant (matricule, nom, matricule_manager)
   values
     ('RPA', 'Robert Patrick', 'RMA'),
-    ('GDU', 'Géraldine Dumur', 'RMA');
+    ('GDU', 'Géraldine Dumur', 'RMA')
+  on conflict (matricule)
+    do update set nom = excluded.nom, matricule_manager = excluded.matricule_manager;
 
 insert into
   demi_journee_de_cra (matricule_consultant, date, demi_journee, code_projet)
@@ -77,4 +83,6 @@ insert into
     ('GDU', '2021-09-29', 'matin', 'P2'),
     ('GDU', '2021-09-29', 'apres_midi', 'P2'),
     ('GDU', '2021-09-30', 'matin', 'P2'),
-    ('GDU', '2021-09-30', 'apres_midi', 'P2');
+    ('GDU', '2021-09-30', 'apres_midi', 'P2')
+  on conflict (matricule_consultant, date, demi_journee)
+    do update set code_projet = excluded.code_projet;
