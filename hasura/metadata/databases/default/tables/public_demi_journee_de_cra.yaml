@@ -1,3 +1,16 @@
 table:
   name: demi_journee_de_cra
   schema: public
+select_permissions:
+- permission:
+    columns:
+    - matricule_consultant
+    - date
+    - demi_journee
+    - code_projet
+    - annee
+    - mois
+    filter:
+      matricule_consultant:
+        _eq: X-Hasura-User-Id
+  role: consultant
