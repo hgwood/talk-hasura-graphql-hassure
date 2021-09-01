@@ -1,6 +1,10 @@
 table:
   name: demi_journee_de_cra
   schema: public
+object_relationships:
+- name: consultant
+  using:
+    foreign_key_constraint_on: matricule_consultant
 select_permissions:
 - permission:
     columns:
@@ -14,3 +18,16 @@ select_permissions:
       matricule_consultant:
         _eq: X-Hasura-User-Id
   role: consultant
+- permission:
+    columns:
+    - date
+    - annee
+    - matricule_consultant
+    - mois
+    - code_projet
+    - demi_journee
+    filter:
+      consultant:
+        matricule_manager:
+          _eq: X-Hasura-User-Id
+  role: manager
