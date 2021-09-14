@@ -19,6 +19,45 @@ info: |
 layout: section
 ---
 
+# Hasura
+
+## Le GraphQL qui Hassure
+
+---
+layout: section
+---
+
+# GraphQL
+
+---
+layout: section
+---
+
+# Hasura
+
+---
+layout: default
+---
+
+# C'est quoi Hasura ?
+
+- Un serveur back-end low code
+  - Se connecte à une source de données SQL
+  - Expose une API GraphQL configurable et consommable directement depuis un front-end
+```mermaid
+flowchart LR
+    Client -- HTTP / GraphQL --- Hasura --- database[Base de données]
+```
+- Un projet open-source (Apache 2) : Hasura Community Edition
+- Un projet commercial
+  - Offre managé : Hasura Cloud
+  - Offre on-premise : Hasura Enterprise Edition
+
+
+---
+layout: section
+---
+
 # L'application d'exemple
 
 ---
@@ -48,6 +87,45 @@ layout: default
 - Les poneys valident leur feuille pour le mois entier
   - Tous les jours du mois doivent avoir une activité pour pouvoir valider
   - Une feuille validée ne peut pas être modifiée
-- Célestia (le manager) approuvent les feuilles validées
-- Célestia vérifie qui n'a pas validé le mois pour pouvoir leur rappeler de le faire
-- Célestia veut un export PDF (parce que c'est comme ça 🤷‍♂️)
+- Célestia (le manager)
+  - peut consulter les feuilles de ses consultants
+  - approuvent les feuilles validées
+  - vérifie qui n'a pas validé le mois pour pouvoir leur rappeler de le faire
+  - veut un export PDF (🤷‍♂️)
+
+---
+
+# Modélisation
+
+```mermaid
+erDiagram
+
+  manager ||--o{ consultant : manage
+  consultant ||--o{ journee_feuille_temps : "remplit"
+  projet ||--o{ journee_feuille_temps : "est associé à"
+  validation_feuille_temps ||--|{ journee_feuille_temps : valide
+```
+
+---
+layout: section
+---
+
+# Construisons !
+
+---
+layout: section
+---
+
+# Authentification
+
+---
+layout: section
+---
+
+# Déploiement
+
+---
+layout: section
+---
+
+# Sur le terrain
