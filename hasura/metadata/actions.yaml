@@ -2,7 +2,7 @@ actions:
 - name: export_feuille_as_pdf
   definition:
     kind: asynchronous
-    handler: http://host.docker.internal:4000/render-pdf
+    handler: http://server:4000/render-pdf
     timeout: 600
 custom_types:
   enums: []
