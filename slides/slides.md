@@ -44,7 +44,10 @@ layout: default
 
 - Les poneys (les consultants) remplissent leur feuille de temps règulièrement pendant le mois (ou pas)
   - un poney + un jour = une activité
-- Les poneys valident leur feuille pour le mois
+- Un email est envoyé aux poneys tous les 25 du mois pour leur rappeler de remplir la feuille
+- Les poneys valident leur feuille pour le mois entier
   - Tous les jours du mois doivent avoir une activité pour pouvoir valider
   - Une feuille validée ne peut pas être modifiée
 - Célestia (le manager) approuvent les feuilles validées
+- Célestia vérifie qui n'a pas validé le mois pour pouvoir leur rappeler de le faire
+- Célestia veut un export PDF (parce que c'est comme ça 🤷‍♂️)
