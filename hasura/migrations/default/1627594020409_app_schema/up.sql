@@ -29,3 +29,13 @@ create table validation_feuille_temps (
   approuve_par_manager boolean not null default false,
   primary key (matricule_consultant, annee, mois)
 );
+
+drop function if exists nombre_jours_dans_mois(integer, integer);
+
+create function nombre_jours_dans_mois
+  (annee integer, mois integer)
+  returns integer
+  language sql immutable
+  as $$
+    select extract(days from make_date(annee, mois, 1) + interval '1 month - 1 day');
+  $$;
