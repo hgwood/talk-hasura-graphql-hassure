@@ -1,3 +1,5 @@
+drop function if exists consultant_without_validation(integer, integer);
+
 create function consultant_without_validation
   (annee integer, mois integer)
   returns setof consultant
