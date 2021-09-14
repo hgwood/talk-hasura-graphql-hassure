@@ -13,6 +13,7 @@ services:
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      EMAIL_REMINDER_TRIGGER_URL: whatever
     ports:
       - "8080:8080"
     depends_on:
