@@ -1,12 +1,12 @@
 table:
-  name: validation_de_cra
+  name: validation_feuille_temps
   schema: public
 object_relationships:
 - name: consultant
   using:
     foreign_key_constraint_on: matricule_consultant
 array_relationships:
-- name: demi_journees_de_cra
+- name: journees
   using:
     manual_configuration:
       column_mapping:
@@ -15,14 +15,14 @@ array_relationships:
         mois: mois
       insertion_order: null
       remote_table:
-        name: demi_journee_de_cra
+        name: journee_feuille_temps
         schema: public
 insert_permissions:
 - permission:
     backend_only: false
     check:
-      demi_journees_de_cra:
-        cra_complet:
+      journees:
+        feuille_complete:
           _eq: "true"
     columns:
     - annee

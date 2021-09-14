@@ -9,7 +9,7 @@ create function consultant_without_validation
     from consultant
     where matricule not in (
       select matricule_consultant
-      from validation_de_cra
+      from validation_feuille_temps
       where annee = annee and mois = mois
     );
   $$;

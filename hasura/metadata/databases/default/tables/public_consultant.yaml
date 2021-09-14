@@ -6,10 +6,10 @@ object_relationships:
   using:
     foreign_key_constraint_on: matricule_manager
 array_relationships:
-- name: demi_journees_de_cra
+- name: journees_feuille_temps
   using:
     foreign_key_constraint_on:
       column: matricule_consultant
       table:
-        name: demi_journee_de_cra
+        name: journee_feuille_temps
         schema: public

@@ -14,21 +14,14 @@ create table consultant (
   matricule_manager char(3) references manager (matricule) on delete restrict on update cascade
 );
 
-create table demi_journee (
-  valeur text primary key
-);
-
-insert into demi_journee values ('matin'), ('apres_midi');
-
-create table demi_journee_de_cra (
+create table journee_feuille_temps (
   matricule_consultant char(3) not null references consultant (matricule) on delete restrict on update cascade,
   date date not null,
-  demi_journee text not null references demi_journee (valeur) on delete restrict on update cascade,
   code_projet text not null references projet (code) on delete restrict on update cascade,
-  primary key (matricule_consultant, date, demi_journee)
+  primary key (matricule_consultant, date)
 );
 
-create table validation_de_cra (
+create table validation_feuille_temps (
   matricule_consultant char(3) not null references consultant (matricule) on delete restrict on update cascade,
   annee integer not null,
   mois integer not null check (mois >= 1 and mois <= 12),

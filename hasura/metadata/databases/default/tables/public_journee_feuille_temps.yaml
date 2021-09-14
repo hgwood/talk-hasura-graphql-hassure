@@ -1,5 +1,5 @@
 table:
-  name: demi_journee_de_cra
+  name: journee_feuille_temps
   schema: public
 object_relationships:
 - name: consultant
@@ -14,14 +14,14 @@ object_relationships:
         mois: mois
       insertion_order: null
       remote_table:
-        name: validation_de_cra
+        name: validation_feuille_temps
         schema: public
 computed_fields:
 - definition:
     function:
-      name: demi_journee_de_cra_cra_complet
+      name: journee_feuille_temps_feuille_complete
       schema: public
-  name: cra_complet
+  name: feuille_complete
 insert_permissions:
 - permission:
     backend_only: false
@@ -29,13 +29,12 @@ insert_permissions:
       _not:
         _exists:
           _table:
-            name: validation_de_cra
+            name: validation_feuille_temps
             schema: public
           _where: {}
     columns:
     - code_projet
     - date
-    - demi_journee
     set:
       matricule_consultant: x-hasura-User-Id
   role: consultant
@@ -44,7 +43,6 @@ select_permissions:
     columns:
     - matricule_consultant
     - date
-    - demi_journee
     - code_projet
     - annee
     - mois
@@ -59,7 +57,6 @@ select_permissions:
     - matricule_consultant
     - mois
     - code_projet
-    - demi_journee
     filter:
       consultant:
         matricule_manager:
@@ -71,7 +68,7 @@ update_permissions:
       _not:
         _exists:
           _table:
-            name: validation_de_cra
+            name: validation_feuille_temps
             schema: public
           _where: {}
     columns:

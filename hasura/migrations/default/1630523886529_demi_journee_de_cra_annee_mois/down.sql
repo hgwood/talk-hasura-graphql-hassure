@@ -1,3 +1,3 @@
-alter table demi_journee_de_cra
+alter table journee_feuille_temps
   drop column annee,
   drop column mois;

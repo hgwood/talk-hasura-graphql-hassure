@@ -1,6 +1,5 @@
 - "!include public_consultant.yaml"
-- "!include public_demi_journee.yaml"
-- "!include public_demi_journee_de_cra.yaml"
+- "!include public_journee_feuille_temps.yaml"
 - "!include public_manager.yaml"
 - "!include public_projet.yaml"
-- "!include public_validation_de_cra.yaml"
+- "!include public_validation_feuille_temps.yaml"

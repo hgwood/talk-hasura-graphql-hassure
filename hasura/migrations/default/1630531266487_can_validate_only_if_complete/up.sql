@@ -8,19 +8,19 @@ create function number_of_days_in_month
     select extract(days from make_date(annee, mois, 1) + interval '1 month - 1 day');
   $$;
 
-drop function if exists demi_journee_de_cra_cra_complet(demi_journee_de_cra);
+drop function if exists journee_feuille_temps_feuille_complete(journee_feuille_temps);
 
-create function demi_journee_de_cra_cra_complet
-  (demi_journee_de_cra_row demi_journee_de_cra)
+create function journee_feuille_temps_feuille_complete
+  (journee_feuille_temps_row journee_feuille_temps)
   returns boolean
   language sql stable
   as $$
-    select number_of_days_in_month(demi_journee_de_cra_row.annee, demi_journee_de_cra_row.mois) * 2 = (
+    select number_of_days_in_month(journee_feuille_temps_row.annee, journee_feuille_temps_row.mois) = (
       select count(*)
-      from demi_journee_de_cra
+      from journee_feuille_temps
       where
-        annee = demi_journee_de_cra_row.annee
-        and mois = demi_journee_de_cra_row.mois
-        and matricule_consultant = demi_journee_de_cra_row.matricule_consultant
+        annee = journee_feuille_temps_row.annee
+        and mois = journee_feuille_temps_row.mois
+        and matricule_consultant = journee_feuille_temps_row.matricule_consultant
     );
   $$
