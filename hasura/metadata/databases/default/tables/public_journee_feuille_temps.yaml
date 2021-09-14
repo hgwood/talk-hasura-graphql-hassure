@@ -26,17 +26,16 @@ insert_permissions:
 - permission:
     backend_only: false
     check:
-      _not:
-        _exists:
-          _table:
-            name: validation_feuille_temps
-            schema: public
-          _where: {}
+      _and:
+      - matricule_consultant:
+          _eq: X-Hasura-User-Id
+      - _not:
+          validation: {}
     columns:
     - code_projet
     - date
     set:
-      matricule_consultant: x-hasura-User-Id
+      matricule_consultant: x-hasura-user-id
   role: consultant
 select_permissions:
 - permission:
@@ -52,11 +51,11 @@ select_permissions:
   role: consultant
 - permission:
     columns:
-    - date
-    - annee
     - matricule_consultant
-    - mois
+    - date
     - code_projet
+    - annee
+    - mois
     filter:
       consultant:
         matricule_manager:
@@ -65,15 +64,21 @@ select_permissions:
 update_permissions:
 - permission:
     check:
-      _not:
-        _exists:
-          _table:
-            name: validation_feuille_temps
-            schema: public
-          _where: {}
+      _and:
+      - matricule_consultant:
+          _eq: X-Hasura-User-Id
+      - _not:
+          validation: {}
     columns:
     - code_projet
     filter: {}
-    set:
-      matricule_consultant: x-hasura-user-id
+  role: consultant
+delete_permissions:
+- permission:
+    filter:
+      _and:
+      - matricule_consultant:
+          _eq: X-Hasura-User-Id
+      - _not:
+          validation: {}
   role: consultant
