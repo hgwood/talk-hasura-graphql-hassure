@@ -113,6 +113,18 @@ layout: section
 # Construisons !
 
 ---
+
+# On résume
+
+- On a une API GraphQL CRUD pour les tables désirées
+- Les relations entre entités de l'API sont configurables indépendamment des relations SQL sous-jacentes
+- L'accès à l'API est restreint par défaut et est ouvert progressivement grâce aux permissions
+  - Les permissions sont basées sur le rôle de l'appelant
+  - Les permissions peuvent resteindre à la fois les lignes et les colonnes
+- Les entités de l'API sont extensibles via des fonctions SQL
+- De nouvelles opérations peuvent être ajoutées à l'API via des fonctions SQL et des webhooks
+
+---
 layout: section
 ---
 
