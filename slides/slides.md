@@ -19,6 +19,45 @@ info: |
 layout: section
 ---
 
+# Hasura
+
+## Le GraphQL qui Hassure
+
+---
+layout: section
+---
+
+# GraphQL
+
+---
+layout: section
+---
+
+# Hasura
+
+---
+layout: default
+---
+
+# C'est quoi Hasura ?
+
+- Un serveur back-end low code
+  - Se connecte à une source de données SQL
+  - Expose une API GraphQL configurable et consommable directement depuis un front-end
+```mermaid
+flowchart LR
+    Client -- HTTP / GraphQL --- Hasura --- database[Base de données]
+```
+- Un projet open-source (Apache 2) : Hasura Community Edition
+- Un projet commercial
+  - Offre managé : Hasura Cloud
+  - Offre on-premise : Hasura Enterprise Edition
+
+
+---
+layout: section
+---
+
 # L'application d'exemple
 
 ---
