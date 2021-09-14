@@ -1,0 +1,12 @@
+type Query {
+  export_feuille_as_pdf (
+    annee: Int!
+    mois: Int!
+  ): File
+}
+
+type File {
+  id : uuid!
+  name : String!
+  content : String!
+}
