@@ -1,3 +1,10 @@
+drop function if exists nombre_jours_dans_mois(integer, integer);
+drop table if exists validation_feuille_temps;
+drop table if exists journee_feuille_temps;
+drop table if exists consultant;
+drop table if exists manager;
+drop table if exists projet;
+
 create table projet (
   code text primary key,
   nom text not null
@@ -29,8 +36,6 @@ create table validation_feuille_temps (
   approuve_par_manager boolean not null default false,
   primary key (matricule_consultant, annee, mois)
 );
-
-drop function if exists nombre_jours_dans_mois(integer, integer);
 
 create function nombre_jours_dans_mois
   (annee integer, mois integer)
