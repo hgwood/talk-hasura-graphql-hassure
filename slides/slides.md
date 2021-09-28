@@ -30,6 +30,25 @@ layout: section
 # GraphQL
 
 ---
+layout: default
+---
+
+# C'est quoi GraphQL ?
+
+Protocol standard de comunication créé par Facebook
+
+## Quels usages ?
+
+  - Gateway pour agréger des services
+  - Création d'un nouveau service
+
+## Quels avantages ?
+
+  - Obtenir toutes les données (mais pas plus) en une requète
+  - Normalisation des échanges de données et des erreurs
+  - Cache coté client très éfficace
+
+---
 layout: section
 ---
 
