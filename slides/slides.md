@@ -81,10 +81,7 @@ layout: default
 
 # Modélisation
 
-<!-- ![Data Model](/data_model.svg) -->
-
 <img src="/data_model.svg" class="h-full m-auto" />
-
 
 ---
 layout: section
