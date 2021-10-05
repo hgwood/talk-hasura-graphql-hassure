@@ -35,7 +35,7 @@ layout: default
 
 # C'est quoi GraphQL ?
 
-Protocol standard de comunication créé par Facebook
+Protocole standard de comunication créé par Facebook
 
 ## Quels usages ?
 
