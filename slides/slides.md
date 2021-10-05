@@ -44,9 +44,9 @@ Protocole standard de comunication créé par Facebook
 
 ## Quels avantages ?
 
-  - Obtenir toutes les données (mais pas plus) en une requète
+  - Obtenir toutes les données (mais pas plus) en une requête
   - Normalisation des échanges de données et des erreurs
-  - Cache coté client très éfficace
+  - Cache coté client très efficace
 
 ---
 layout: section
