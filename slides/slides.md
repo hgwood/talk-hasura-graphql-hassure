@@ -139,16 +139,19 @@ layout: default
 </div>
 
 ---
-layout: section
+layout: default
 ---
 
-# Déploiement
+# Operations
 
----
-layout: section
----
+<style>
+  h2 { margin-top: 3rem }
+</style>
 
-# Limites
+## Versionning
+## Déploiement
+## Intégration
+## Performance & Scaling
 
 ---
 layout: section
