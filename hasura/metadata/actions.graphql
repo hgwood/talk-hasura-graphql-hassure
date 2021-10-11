@@ -1,12 +1,20 @@
 type Query {
-  export_feuille_as_pdf (
+  render_pdf(
+    annee: Int!
+    mois: Int!
+  ): File
+}
+
+type Query {
+  render_pdf_async(
     annee: Int!
     mois: Int!
   ): File
 }
 
 type File {
-  id : uuid!
-  name : String!
-  content : String!
+  id: uuid!
+  name: String!
+  content: String!
 }
+

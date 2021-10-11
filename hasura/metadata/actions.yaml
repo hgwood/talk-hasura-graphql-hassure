@@ -1,9 +1,13 @@
 actions:
-- name: export_feuille_as_pdf
+- name: render_pdf
   definition:
-    kind: asynchronous
+    kind: ""
     handler: http://server:4000/render-pdf
     timeout: 600
+- name: render_pdf_async
+  definition:
+    kind: ""
+    handler: http://server:4000/render-pdf
 custom_types:
   enums: []
   input_objects: []
