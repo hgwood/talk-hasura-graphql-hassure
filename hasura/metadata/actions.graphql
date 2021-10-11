@@ -1,20 +1,13 @@
-type Query {
+type Mutation {
   render_pdf(
     annee: Int!
     mois: Int!
   ): File
 }
 
-type Query {
-  render_pdf_async(
-    annee: Int!
-    mois: Int!
-  ): File
-}
-
 type File {
-  id: uuid!
-  name: String!
+  id: String!
+  filename: String!
   content: String!
 }
 

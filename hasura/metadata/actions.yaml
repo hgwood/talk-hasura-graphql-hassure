@@ -1,13 +1,9 @@
 actions:
 - name: render_pdf
   definition:
-    kind: ""
-    handler: http://server:4000/render-pdf
+    kind: synchronous
+    handler: http://host.docker.internal:4000/render-pdf
     timeout: 600
-- name: render_pdf_async
-  definition:
-    kind: ""
-    handler: http://server:4000/render-pdf
 custom_types:
   enums: []
   input_objects: []
