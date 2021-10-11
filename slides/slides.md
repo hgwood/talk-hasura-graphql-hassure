@@ -88,6 +88,20 @@ layout: default
 <img src="/data_model.svg" class="h-full m-auto" />
 
 ---
+layout: default
+---
+
+# Préparons-nous
+
+<style>
+  h2 { margin-top: 3rem }
+</style>
+
+## La base de données existe
+## On a lancé un serveur Hasura
+## On a lancé la console d'admnistration avec Hasura CLI
+
+---
 layout: section
 ---
 
