@@ -106,6 +106,39 @@ layout: section
 # Authentification
 
 ---
+layout: default
+---
+
+# JWT
+
+```json
+{
+  "sub": "1234567890",
+  "iat": 1516238022,
+  "exp": 1516239022,
+  "https://hasura.io/jwt/claims": {
+    "x-hasura-user-id": "1234567890",
+    "x-hasura-allowed-roles": ["consultant", "user"],
+    "x-hasura-default-role": "consultant",
+    "x-hasura-custom": "custom-value"
+  }
+}
+```
+
+---
+layout: default
+---
+
+# D'où vient le JWT ?
+
+<div class="image-grid">
+  <img src="/auth0_logo.png">
+  <img src="/nodejs_logo.png">
+  <img src="/cloud_functions_logo.png">
+  <img src="/postgres_logo.svg">
+</div>
+
+---
 layout: section
 ---
 
