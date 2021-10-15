@@ -37,20 +37,58 @@ layout: section
 layout: default
 ---
 
+<style>
+  pre:nth-of-type(1) {
+    margin-top: 30px;
+    float: left
+  }
+
+  pre {
+    margin: 20px;
+  }
+</style>
+
 # C'est quoi GraphQL ?
 
 Protocole standard de comunication créé par Facebook
 
-## Quels usages ?
+```
+query {
+  user {
+    id, name, email,
+    friends {
+      id, name
+    }
+  }
+}
+```
 
-  - Gateway pour agréger des services
-  - Création d'un nouveau service
+```
+type Query {
+  users: [User]
+}
 
-## Quels avantages ?
+type User {
+  id: ID!
+  name: String!
+  email: String
+  friends: [User]
+}
+```
 
-  - Obtenir toutes les données (mais pas plus) en une requête
-  - Normalisation des échanges de données et des erreurs
-  - Cache coté client très efficace
+<!--
+Créé par facebook
+
+Remplacer REST pour besoin facebook
+
+Points clefs :
+  - Une query pour tout
+  - convention (Repose sur HTTP)
+  - Un graph schéma
+
+Génial coté client
+Optimisation pénible coté back
+-->
 
 ---
 layout: section
