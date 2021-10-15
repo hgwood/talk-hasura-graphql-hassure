@@ -16,7 +16,7 @@ class: text-center
 
 ## Le GraphQL qui Hassure
 
-<img src="/assurance.jpeg" class="rounded-3xl mx-auto my-8" />
+<img src="/assurance.jpeg" class="max-h-xs rounded-3xl mx-auto my-8" />
 
 <!--
 Valentin :
@@ -218,3 +218,5 @@ layout: section
 # Alors, heureux ?
 
 (Merci !)
+
+<img src="/alors_heureux.jpg" class="max-h-xs rounded-3xl mx-auto my-8" />
