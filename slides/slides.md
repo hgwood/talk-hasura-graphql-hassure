@@ -206,6 +206,39 @@ layout: default
 ## Performance & Scaling
 
 ---
+layout: default
+---
+
+# Versionning
+
+```yaml
+table:
+  name: journee_feuille_temps
+  schema: public
+select_permissions:
+- permission:
+    filter:
+      matricule_consultant:
+        _eq: X-Hasura-User-Id
+  role: consultant
+```
+
+---
+layout: default
+---
+
+# Operations
+
+<style>
+  h2 { margin-top: 3rem }
+</style>
+
+## Versionning
+## Déploiement
+## Intégration
+## Performance & Scaling
+
+---
 layout: section
 ---
 
