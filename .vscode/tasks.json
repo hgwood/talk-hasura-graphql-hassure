@@ -51,7 +51,7 @@
     {
       "label": "Open table configuration",
       "type": "shell",
-      "command": "code --new-window --wait hasura/metadata/databases/default/tables/public_journee_feuille_temps.yaml",
+      "command": "code --new-window --wait hasura_console/metadata/databases/default/tables/public_journee_feuille_temps.yaml",
       "problemMatcher": [],
       "presentation": {
         "echo": true,
